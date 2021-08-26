@@ -8,9 +8,9 @@ class ToDoRecord {
   String title ="<no title>";
   DateTime createdAt = DateTime.now();
   bool done = false;
-  //ToDoRecord({required this.title});
+
   ToDoRecord();
-  //ToDoRecord copy(ToDoRecord r) {
+
   ToDoRecord copy() {
     return ToDoRecord()
       ..id = id

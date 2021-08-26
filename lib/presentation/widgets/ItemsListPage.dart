@@ -55,52 +55,6 @@ class _OneItem extends StatelessWidget {
                 ),
               ),
             ),
-/*
-            CheckboxListTile( //value: value, onChanged: onChanged)
-              value: false,
-              title: Text(item.title),
-              subtitle: Text(
-                "Создана: ${DateFormat('yyyy.MM.dd, HH:mm').format(item.createdAt)}",
-                style: TextStyle(
-                  fontFamily: 'georgia',
-                  fontSize: 12,
-                  color: Colors.red,
-                ),
-              ),
-              onChanged: (value) {
-                log("new value: $value");
-              },
-              // onTap: () {
-              //   Navigator.push(
-              //     ctx,
-              //     MaterialPageRoute(
-              //       builder: (context) => EditItemPage(item),
-              //     ),
-              //   );
-              // },
-            ),
-*/
-/*
-            ListTile(
-              title: Text(item.title),
-              subtitle: Text(
-                "Создана: ${DateFormat('yyyy.MM.dd, HH:mm').format(item.createdAt)}",
-                style: TextStyle(
-                  fontFamily: 'georgia',
-                  fontSize: 12,
-                  color: Colors.red,
-                ),
-              ),
-              onTap: () {
-                Navigator.push(
-                  ctx,
-                  MaterialPageRoute(
-                    builder: (context) => EditItemPage(item),
-                  ),
-                );
-              },
-            ),
-*/
           ],
         ),
       );
@@ -157,48 +111,6 @@ class ItemsListPage extends StatelessWidget {
             )
           ],
     );
-
-
-/*
-    return new Scaffold(
-        appBar: new AppBar(title: new Text("Список задач"),),
-        body: new Column(
-          children: <Widget>[
-            new TextField(
-              focusNode: focusNode,
-              controller: eCtrl,
-              onSubmitted: (text) {
-                bloc.commands_sink.add( ToDoAddByTitleCommand(title: text) );
-                eCtrl.clear();
-                focusNode.requestFocus();
-              },
-            ),
-            new Expanded(
-              child: StreamBuilder(
-                  stream: bloc.events_stream,
-                  builder: (BuildContext context, AsyncSnapshot<ToDoEvent> snapshot) {
-                    if( snapshot.data is ToDoSendItemsListEvent ) {
-                      var event = snapshot.data as ToDoSendItemsListEvent;
-                      var items = event.items;
-                      return ListView.builder(
-                          itemCount: items.length,
-                          itemBuilder: (BuildContext ctx, int index) {
-                            return _OneItem(
-                              items.elementAt(index));
-                          }
-                      );
-                    }
-                    //bloc.commands_sink.add( ItemsListInitMeCommand() );
-                    return Text( snapshot.data.runtimeType.toString() );
-                  }
-              ),
-            )
-          ],
-        )
-    );
-*/
-
-
 
   }
 }
